@@ -128,3 +128,4 @@ dmypy.json
 tmp/
 nginx/ssl/
 .local/
+.log

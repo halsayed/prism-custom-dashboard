@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  nginx:
+    image: nginx
+    restart: always
+    ports:
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/ssl/nginx
+      - ./nginx/logs:/var/log/nginx
+  login:
+    build: ./login/.
+    restart: always
+    environment:
+      - PRISM_IP=10.38.11.9
+      - PRISM_PORT=9440
