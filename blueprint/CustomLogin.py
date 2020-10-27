@@ -5,12 +5,12 @@ from calm.dsl.builtins import Blueprint
 from calm.dsl.cli.bps import compile_blueprint, create_blueprint
 from calm.dsl.api.handle import get_api_client
 
-from vars import UBUNTU_CRED
+from vars import CENTOS_CRED
 from services import Nginx
 from packages import NginxPackage
 from substrates import NginxSubstrace
 from profiles import AHV
-from base_vm import ubuntuDisk
+from base_vm import centosDisk
 
 
 class CustomLogin(Blueprint):
@@ -18,8 +18,8 @@ class CustomLogin(Blueprint):
     profiles = [AHV]
     services = [Nginx]
     substrates = [NginxSubstrace]
-    packages = [NginxPackage, ubuntuDisk]
-    credentials = [UBUNTU_CRED]
+    packages = [NginxPackage, centosDisk]
+    credentials = [CENTOS_CRED]
 
 
 def main():

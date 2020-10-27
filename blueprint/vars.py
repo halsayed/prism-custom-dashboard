@@ -1,15 +1,15 @@
 from calm.dsl.builtins import read_local_file, basic_cred
 
 # Change values based on your calm environment
-IMAGE_NAME = 'ubuntu_focal'
-IMAGE_URL = 'https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img'
+IMAGE_NAME = 'centos7'
+IMAGE_URL = 'http://download.nutanix.com/calm/CentOS-7-x86_64-1810.qcow2'
 NETWORK_NAME = 'DC-1-NET-1'
-VM_USERNAME = 'ubuntu'
+VM_USERNAME = 'centos'
 
 
 # Secret variables (.local file store)
-UBUNTU_KEY = read_local_file('centos')
+CENTOS_KEY = read_local_file('centos')
 
 # Blueprint credentials
-UBUNTU_CRED = basic_cred(VM_USERNAME, UBUNTU_KEY, name='UBUNTU_CRED', type='KEY', default=True)
+CENTOS_CRED = basic_cred(VM_USERNAME, CENTOS_KEY, name='UBUNTU_CRED', type='KEY', default=True)
 
