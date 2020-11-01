@@ -26,5 +26,5 @@ class CentosVmResource(AhvVmResources):
     )
 
 
-class UbuntuAhvVM(AhvVm):
+class CentosAhvVM(AhvVm):
     resources = CentosVmResource

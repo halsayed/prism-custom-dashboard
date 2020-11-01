@@ -1,21 +1,13 @@
 #!/bin/bash
 set -ex
 
-# update and install nginx
-sudo yum update -y
-sudo yum -y install epel-release \
-                    yum-utils \
-                    git \
-                    curl \
-                    wget \
-                    device-mapper-persistent-data \
-                    lvm2
-
+# install docker engine
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install -y docker
+sudo yum install --quiet -y docker
 
 sudo systemctl start docker
 sudo systemctl enable docker
+sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # install docker-compose

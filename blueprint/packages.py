@@ -9,7 +9,10 @@ class NginxPackage(Package):
 
     @action
     def __install__(self):
-        CalmTask.Exec.ssh(name='update ubuntu', filename='scripts/install_docker.sh')
+        CalmTask.Exec.ssh(name='Prepare Centos', filename='scripts/prepare_centos.sh')
+        CalmTask.Exec.ssh(name='Install docker', filename='scripts/install_docker.sh')
+        CalmTask.Exec.ssh(name='Install custom login app', filename='scripts/install_custom_login_app.sh')
+
 
 
 
