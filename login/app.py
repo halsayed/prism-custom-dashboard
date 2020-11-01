@@ -67,16 +67,16 @@ def prism_login(username, password, user_agent=None):
         log.info(f'api login pass for user: {username}')
 
         # the user is domain based, no need to perform spring security check
-        if '@' in username:
-            log.info(f'User {username} is a LDAP user')
-            return True, client.cookies
+        # if '@' in username:
+        #     log.info(f'User {username} is a LDAP user')
+        #     return True, client.cookies
 
-        # local user continue with spring security check
+        # local admin continue with spring security check
         data = f'j_username={username}&j_password={password}'
         resp = client.post(spring_security_url, verify=verify_ssl, data=data, headers=headers)
         if resp.status_code == 200:
             log.info(f'spring check pass for user: {username}')
-            return True, client.cookies
+        return True, client.cookies
 
     # one of the stages failed
     log.info(f'error in login for user: {username}')
