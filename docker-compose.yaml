@@ -13,5 +13,5 @@ services:
     build: ./login/.
     restart: always
     environment:
-      - PRISM_IP=10.38.11.9
+      - PRISM_IP=10.42.32.39
       - PRISM_PORT=9440
