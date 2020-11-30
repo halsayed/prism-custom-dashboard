@@ -41,8 +41,8 @@ def login():
                                    error_message=error_message)
 
     return render_template('index.html',
-                           page_title='Prism Login',
-                           login_title='Custom Prism Login')
+                           page_title=page_title,
+                           login_title=login_title)
 
 
 def prism_login(username, password, user_agent=None):
