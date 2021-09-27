@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def login():
     error_message = None
+    log.info(f'DEBUG={redirect_prism}')
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')

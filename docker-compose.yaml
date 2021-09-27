@@ -1,17 +1,26 @@
 version: "3.3"
+
 services:
   nginx:
     image: nginx
     restart: always
     ports:
+      - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx/ssl:/etc/ssl/nginx
-      - ./nginx/logs:/var/log/nginx
+      - ${PWD}/nginx/templates:/etc/nginx/templates
+      - ${PWD}/nginx/ssl:/etc/ssl/nginx
+      - ${PWD}/nginx/logs:/var/log/nginx
+    environment:
+      - PRISM_IP=${PRISM_IP}
+      - PRISM_PORT=${PRISM_PORT}
   login:
     build: ./login/.
     restart: always
     environment:
-      - PRISM_IP=10.38.2.9
-      - PRISM_PORT=9440
+      - PRISM_IP=${PRISM_IP}
+      - PRISM_PORT=${PRISM_PORT}
+      - PAGE_TITLE=Prism Login
+      - LOGIN_TITLE=Custom Prism Login Dashboard
+      - VERIFY_SSL=False
+      - PRISM_REDIRECT=console/#/page/explore/calm/marketplace

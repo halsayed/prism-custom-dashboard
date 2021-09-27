@@ -129,3 +129,6 @@ tmp/
 nginx/ssl/
 .local/
 .log
+
+.DS_Store/
+.DS_Store
