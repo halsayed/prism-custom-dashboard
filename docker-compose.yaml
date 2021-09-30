@@ -12,15 +12,16 @@ services:
       - ${PWD}/nginx/ssl:/etc/ssl/nginx
       - ${PWD}/nginx/logs:/var/log/nginx
     environment:
-      - PRISM_IP=${PRISM_IP}
+      - PRISM_HOST=${PRISM_HOST}
       - PRISM_PORT=${PRISM_PORT}
   login:
-    build: ./login/.
+    build: .
     restart: always
     environment:
-      - PRISM_IP=${PRISM_IP}
+      - PRISM_HOST=${PRISM_HOST}
       - PRISM_PORT=${PRISM_PORT}
       - PAGE_TITLE=Prism Login
       - LOGIN_TITLE=Custom Prism Login Dashboard
       - VERIFY_SSL=False
       - PRISM_REDIRECT=console/#/page/explore/calm/marketplace
+      - DEBUG=False

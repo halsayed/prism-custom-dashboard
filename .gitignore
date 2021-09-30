@@ -125,10 +125,13 @@ dmypy.json
 
 # Pycharm related
 .idea/
+
+# local files
 tmp/
-nginx/ssl/
 .local/
 .log
+*.cert
+*.key
 
 .DS_Store/
 .DS_Store
