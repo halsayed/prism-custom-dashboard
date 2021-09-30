@@ -10,7 +10,7 @@ from wtforms.validators import DataRequired
 def successful_redirect(cookies, destination='/'):
     response = make_response(redirect(urljoin(request.base_url, destination)))
     for cookie in cookies:
-        response.set_cookie(cookie.name, cookie.value, secure=cookie.secure, httponly=True, expires=cookie.expires)
+        response.set_cookie(cookie.name, cookie.value, secure=cookie.secure, expires=cookie.expires)
 
     return response
 
