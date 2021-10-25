@@ -23,5 +23,5 @@ services:
       - PAGE_TITLE=Prism Login
       - LOGIN_TITLE=Custom Prism Login Dashboard
       - VERIFY_SSL=False
-      - PRISM_REDIRECT=console/#/page/explore/calm/marketplace
+      - REDIRECT_DEST=console/#/page/explore/calm/marketplace
       - DEBUG=False

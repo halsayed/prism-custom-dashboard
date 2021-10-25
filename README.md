@@ -62,7 +62,8 @@ git clone https://github.com/halsayed/prism-custom-dashboard.git
 cd prism-custom-dashboard
 ```
 2. Edit docker-compose.yaml replacing PRISM_HOST and PRISM_PORT with the correct values for your environment. Alternatively you can create .env file with these values.
-3. run docker-compose
+3. Save nginx certificate under the name *"nginx/ssl/nginx.cert"* and the key as *"nginx/ssl/nginx.key"*
+4. run docker-compose
 ```shell
 docker-compose up -d
 ```
@@ -70,16 +71,16 @@ docker-compose up -d
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+To customize the look and feel of the login page, please modify the template under *"app/templates/index.html"*
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+For replacing the image only, overwrite *"app/static/images/img-01.png"*
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/halsayed/prism-custom-dashboard/issues) for a list of proposed features (and known issues).
 
 
 
